@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarConnect - Solicitar Corrida</title>
+    <link rel="stylesheet" href="/css/layout.css">
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <header>
+        <nav>
+            <div id="logo">CarConnect</div>
+            <div id="user-login">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Solicitar Corrida - CarConnect</h2>
+        <div id="map"></div>
+
+        <div id="form-container">
+            <label for="destination">Destino (opcional):</label>
+            <input type="text" id="destination" placeholder="Clique no mapa ou digite o endereço">
+
+            <label for="passenger-type">Tipo de Passageiro:</label>
+            <select id="passenger-type">
+                <option value="cadeirante">Cadeirante</option>
+                <option value="deficiente fisico">Deficiente Físico</option>
+                <option value="outras">Outras Necessidades</option>
+            </select>
+
+            <button onclick="calculateRoute()">Calcular Rota</button>
+            <div id="info"></div>
+
+            <button id="request-ride" onclick="requestRide()" style="display: none;">Solicitar Corrida</button>
+        </div>
+    </main>
+
+
+    <script src="/js/layout.js">
+
+    sessionStorage.setItem('destination', destinationInput);
+    sessionStorage.setItem('passengerType', passengerType);
+    sessionStorage.setItem('distance', distance);
+    sessionStorage.setItem('estimatedPrice', estimatedPrice);
+
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjqv3bpGLNLC8jF4MBy3xKZBGa3CNn1Cs&callback=initMap"></script>
+
+    
+</body>
+</html>
