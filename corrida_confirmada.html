@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarConnect - Corrida Confirmada</title>
+    <link rel="stylesheet" href="/css/layout.css">
+    <style>
+        /* Estilo para o container da confirmação */
+        #confirmation-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        /* Estilo para a imagem */
+        #confirmation-container img {
+            width: 150px; /* Ajuste o tamanho da imagem */
+            height: auto;
+            margin-right: 20px;
+        }
+
+        /* Estilo para o formulário de destino e lugar de embarque */
+        #confirmation-container .details {
+            max-width: 300px;
+        }
+
+        /* Estilo para o botão */
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo">CarConnect</div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="confirmation-container">
+            <!-- Imagem inserida -->
+            <img src="img/DALL·E 2024-11-11 23.00.27 - A cheerful and professional illustration of a driver arriving in a car to pick up a passenger. The car should be sleek, modern, and bright, with a wel.webp" alt="Imagem do motorista a caminho">
+
+            <!-- Detalhes ao lado da imagem -->
+            <div class="details">
+                <h2>Seu motorista já está a caminho!</h2>
+                <p>Fique tranquilo, um motorista está a caminho do seu local de origem e logo estará aí para te pegar. Em breve, você receberá uma atualização com mais detalhes.</p>
+
+                
+                <button onclick="window.location.href = '/Solicitar_corrida.html';">Voltar para a página inicial</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/layout.js">
+
+    window.onload = function() {
+
+    // Preenche os campos da página de confirmação
+    document.getElementById('destination').value = destination || "Destino não informado";
+    document.getElementById('pickup-location').value = "Local de embarque exemplo"; // Você pode modificar conforme necessário
+
+    // Exibe as informações de distância e preço
+    const infoContainer = document.getElementById('confirmation-info');
+    infoContainer.innerHTML = `
+        <p><strong>Distância:</strong> ${distance} km</p>
+        <p><strong>Preço estimado:</strong> R$ ${estimatedPrice}</p>
+    `;
+}
+
+    </script>
+    
+</body>
+</html>
